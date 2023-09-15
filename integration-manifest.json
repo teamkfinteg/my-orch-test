@@ -1,13 +1,13 @@
 {
   "$schema": "https://keyfactor.github.io/integration-manifest-schema.json",
   "integration_type": "orchestrator",
-  "name": "Integration Template",
+  "name": "My Test Orchestrator",
   "status": "prototype",
   "support_level": "community",
-  "description": "This project is meant to be a template to quickly build a basic integration product build. Currently in dev, a work in progress,",
+  "description": "This repoitory is used for testing kf orc scripts",
   "link_github": false,
   "update_catalog": false,
-  "release_dir": "UPDATE-THIS-WITH-PATH-TO-BINARY-BUILD-FOLDER",
+  "release_dir": "bin/Release/netcoreapp3.1",
   "about": {
     "orchestrator": {
       "UOFramework": "10.1",

@@ -20,17 +20,17 @@ jobs:
     secrets: 
       token: ${{ secrets.PRIVATE_PACKAGE_ACCESS }}
 
-  call-golang-build-and-release-workflow:
-    if: needs.call-assign-from-json-workflow.outputs.golang == 'True'
-    needs: [call-create-github-release-workflow, call-assign-from-json-workflow]
-    uses: Keyfactor/actions/.github/workflows/golang-build-and-release.yml@main
-    with:
-      release_version: ${{ needs.call-create-github-release-workflow.outputs.release_version }}
-      release_url: ${{ needs.call-create-github-release-workflow.outputs.release_url }}
-      release_dir: ${{ needs.call-assign-from-json-workflow.outputs.release_dir }}
+  #call-golang-build-and-release-workflow:
+  #  if: needs.call-assign-from-json-workflow.outputs.golang == 'True'
+  #  needs: [call-create-github-release-workflow, call-assign-from-json-workflow]
+  #  uses: Keyfactor/actions/.github/workflows/golang-build-and-release.yml@main
+  #  with:
+  #    release_version: ${{ needs.call-create-github-release-workflow.outputs.release_version }}
+  #    release_url: ${{ needs.call-create-github-release-workflow.outputs.release_url }}
+  #    release_dir: ${{ needs.call-assign-from-json-workflow.outputs.release_dir }}
 
-    secrets: 
-      token: ${{ secrets.PRIVATE_PACKAGE_ACCESS }}
+  #  secrets: 
+  #    token: ${{ secrets.PRIVATE_PACKAGE_ACCESS }}
 
   call-generate-readme-workflow:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
